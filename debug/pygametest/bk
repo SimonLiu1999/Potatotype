@@ -1,0 +1,20 @@
+        self.type_text = ""
+        self.disp_text = ""
+        self.text_enable = False
+        self.__textfont = pygame.font.Font("C:\\Windows\\Fonts\\simfang.ttf", 22)
+
+        # 创建输入字符区域。
+        self.__textrect = pygame.Rect(0, BOARD_HEIGHT // 4 * 3, BOARD_WIDTH, BOARD_HEIGHT - BOARD_HEIGHT // 4 * 3)
+        # 创建显示字符区域。
+        self.__disprect = pygame.Rect(0, 0, BOARD_WIDTH, BOARD_HEIGHT // 4 * 3)
+
+    def __draw_background(self):
+        # 绘制显示区。
+        pygame.draw.rect(self.__windows, LIGHT_YELLOW,
+                         self.__disprect)
+        # 绘制输入区。            
+        pygame.draw.rect(self.__windows, WHITE_COLOR,
+                         self.__textrect)
+        # 绘制右侧白色背景。
+        pygame.draw.rect(self.__windows, BLUE_COLOR,
+                         (BOARD_WIDTH, 0, INFO_WIDTH, BOARD_HEIGHT))
