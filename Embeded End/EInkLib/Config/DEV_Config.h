@@ -62,6 +62,12 @@
 #define UWORD   uint16_t
 #define UDOUBLE uint32_t
 
+struct Image{
+	UBYTE* BlackImage;
+	UBYTE* YellowImage;
+};
+
+
 /**
  * e-Paper GPIO
 **/

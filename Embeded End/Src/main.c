@@ -17,7 +17,6 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
@@ -33,24 +32,10 @@
 #include "EPD_1in54c.h"
 //#include "parse_eval.c"
 #include "expr.h"
-
-#define WAITHEAD1 0
-#define WAITHEAD2 1
-#define WAITHEAD3 2
-#define GETCOMMAND 3
-#define GETLEN1 4
-#define GETLEN2 5
-#define READDATA 6
-#define READIMAGE 7
-#define SUMCHECK 8
-
-#define TASK_SCREEN 1
-#define TASK_CALCULATION 2
+#include "taskhandle.h"
+#include "Debug.h"
 
 
-#define HEAD1 0x11
-#define HEAD2 0x22
-#define HEAD3 0x33
 //#define RECEIVING 1
 //#define NOTRECEIVING 0
 
@@ -82,43 +67,67 @@ UART_HandleTypeDef huart3;
 DMA_HandleTypeDef hdma_usart1_rx;
 DMA_HandleTypeDef hdma_usart1_tx;
 
-/* Definitions for Allocator */
-osThreadId_t AllocatorHandle;
-const osThreadAttr_t Allocator_attributes = {
-  .name = "Allocator",
-  .priority = (osPriority_t) osPriorityHigh,
-  .stack_size = 256 * 4
+/* Definitions for UARTDecoder */
+osThreadId_t UARTDecoderHandle;
+const osThreadAttr_t UARTDecoder_attributes = {
+  .name = "UARTDecoder",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for ScreenRefresh */
 osThreadId_t ScreenRefreshHandle;
 const osThreadAttr_t ScreenRefresh_attributes = {
   .name = "ScreenRefresh",
-  .priority = (osPriority_t) osPriorityNormal7,
-  .stack_size = 256 * 4
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
 };
 /* Definitions for Calculation */
 osThreadId_t CalculationHandle;
 const osThreadAttr_t Calculation_attributes = {
   .name = "Calculation",
-  .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 256 * 4
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for BlinkLED */
 osThreadId_t BlinkLEDHandle;
 const osThreadAttr_t BlinkLED_attributes = {
   .name = "BlinkLED",
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityRealtime,
-  .stack_size = 128 * 4
+};
+/* Definitions for uarttx */
+osThreadId_t uarttxHandle;
+const osThreadAttr_t uarttx_attributes = {
+  .name = "uarttx",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal,
+};
+/* Definitions for processor */
+osThreadId_t processorHandle;
+const osThreadAttr_t processor_attributes = {
+  .name = "processor",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for QueueUARTToAllocator */
 osMessageQueueId_t QueueUARTToAllocatorHandle;
 const osMessageQueueAttr_t QueueUARTToAllocator_attributes = {
   .name = "QueueUARTToAllocator"
 };
-/* Definitions for ScreenSemaphore */
-osSemaphoreId_t ScreenSemaphoreHandle;
-const osSemaphoreAttr_t ScreenSemaphore_attributes = {
-  .name = "ScreenSemaphore"
+/* Definitions for QueueToUART */
+osMessageQueueId_t QueueToUARTHandle;
+const osMessageQueueAttr_t QueueToUART_attributes = {
+  .name = "QueueToUART"
+};
+/* Definitions for QueueDecoderToProcessor */
+osMessageQueueId_t QueueDecoderToProcessorHandle;
+const osMessageQueueAttr_t QueueDecoderToProcessor_attributes = {
+  .name = "QueueDecoderToProcessor"
+};
+/* Definitions for QueueProcessorToScreen */
+osMessageQueueId_t QueueProcessorToScreenHandle;
+const osMessageQueueAttr_t QueueProcessorToScreen_attributes = {
+  .name = "QueueProcessorToScreen"
 };
 /* Definitions for CalcSemaphore */
 osSemaphoreId_t CalcSemaphoreHandle;
@@ -139,10 +148,10 @@ PUTCHAR_PROTOTYPE
 }
 
 uint8_t UpperRx=0;
-UBYTE BlackImage[2888];
-UBYTE YellowImage[2888];
-UWORD Imagesize = ((EPD_1IN54C_WIDTH % 8 == 0)? (EPD_1IN54C_WIDTH / 8 ): (EPD_1IN54C_WIDTH / 8 + 1)) * EPD_1IN54C_HEIGHT;
-uint8_t DataBuffer[100];
+//UBYTE BlackImage[2888];
+//UBYTE YellowImage[2888];
+//UWORD Imagesize = ((EPD_1IN54C_WIDTH % 8 == 0)? (EPD_1IN54C_WIDTH / 8 ): (EPD_1IN54C_WIDTH / 8 + 1)) * EPD_1IN54C_HEIGHT;
+//uint8_t DataBuffer[100];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -154,10 +163,12 @@ static void MX_SPI1_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_IWDG_Init(void);
 static void MX_TIM7_Init(void);
-void TaskAllocator(void *argument);
+void TaskUARTDecoder(void *argument);
 void TaskScreenRefresh(void *argument);
 void TaskCalculation(void *argument);
 void TaskBlinkLED(void *argument);
+void UARTTx(void *argument);
+void TaskProcessor(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -216,15 +227,11 @@ int main(void)
   /* USER CODE END RTOS_MUTEX */
 
   /* Create the semaphores(s) */
-  /* creation of ScreenSemaphore */
-  ScreenSemaphoreHandle = osSemaphoreNew(1, 1, &ScreenSemaphore_attributes);
-
   /* creation of CalcSemaphore */
   CalcSemaphoreHandle = osSemaphoreNew(1, 1, &CalcSemaphore_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
-	xSemaphoreTake(ScreenSemaphoreHandle,0);//刷掉初始信号量
 	xSemaphoreTake(CalcSemaphoreHandle,0); //刷掉初始信号量
   /* USER CODE END RTOS_SEMAPHORES */
 
@@ -236,13 +243,22 @@ int main(void)
   /* creation of QueueUARTToAllocator */
   QueueUARTToAllocatorHandle = osMessageQueueNew (100, sizeof(uint8_t), &QueueUARTToAllocator_attributes);
 
+  /* creation of QueueToUART */
+  QueueToUARTHandle = osMessageQueueNew (16, sizeof(unsigned char *), &QueueToUART_attributes);
+
+  /* creation of QueueDecoderToProcessor */
+  QueueDecoderToProcessorHandle = osMessageQueueNew (16, sizeof(unsigned char *), &QueueDecoderToProcessor_attributes);
+
+  /* creation of QueueProcessorToScreen */
+  QueueProcessorToScreenHandle = osMessageQueueNew (2, sizeof(struct Image), &QueueProcessorToScreen_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of Allocator */
-  AllocatorHandle = osThreadNew(TaskAllocator, NULL, &Allocator_attributes);
+  /* creation of UARTDecoder */
+  UARTDecoderHandle = osThreadNew(TaskUARTDecoder, NULL, &UARTDecoder_attributes);
 
   /* creation of ScreenRefresh */
   ScreenRefreshHandle = osThreadNew(TaskScreenRefresh, NULL, &ScreenRefresh_attributes);
@@ -253,14 +269,24 @@ int main(void)
   /* creation of BlinkLED */
   BlinkLEDHandle = osThreadNew(TaskBlinkLED, NULL, &BlinkLED_attributes);
 
+  /* creation of uarttx */
+  uarttxHandle = osThreadNew(UARTTx, NULL, &uarttx_attributes);
+
+  /* creation of processor */
+  processorHandle = osThreadNew(TaskProcessor, NULL, &processor_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 	printf("Welcome!Potato Server Has Started!\r\n");
   /* USER CODE END RTOS_THREADS */
 
+  /* USER CODE BEGIN RTOS_EVENTS */
+  /* add events, ... */
+  /* USER CODE END RTOS_EVENTS */
+
   /* Start scheduler */
   osKernelStart();
- 
+
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -283,9 +309,15 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Configure the main internal regulator output voltage
+  */
+  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_MSI;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
@@ -297,7 +329,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -307,19 +339,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_USART3;
-  PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
-  PeriphClkInit.Usart3ClockSelection = RCC_USART3CLKSOURCE_PCLK1;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure the main internal regulator output voltage 
-  */
-  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -502,10 +521,10 @@ static void MX_USART3_UART_Init(void)
 
 }
 
-/** 
+/**
   * Enable DMA controller clock
   */
-static void MX_DMA_Init(void) 
+static void MX_DMA_Init(void)
 {
 
   /* DMA controller clock enable */
@@ -572,86 +591,103 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//串口回调函数
 		BaseType_t xHigherPriorityTaskWoken=pdFALSE;
 		if(xQueueSendFromISR(QueueUARTToAllocatorHandle , &UpperRx, &xHigherPriorityTaskWoken )!=pdTRUE)printf("**@$$");
 		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+		
+
 
 	}
 }
 /* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_TaskAllocator */
+/* USER CODE BEGIN Header_TaskUARTDecoder */
 /**
-  * @brief  Function implementing the Allocator thread.
-  * @param  argument: Not used 
+  * @brief  Function implementing the UARTDecoder thread.
+  * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_TaskAllocator */
-void TaskAllocator(void *argument)
+/* USER CODE END Header_TaskUARTDecoder */
+void TaskUARTDecoder(void *argument)
 {
   /* USER CODE BEGIN 5 */
 	static BaseType_t xReturn = pdTRUE;
 	static uint8_t Rx_queue;
 	static uint8_t Status=WAITHEAD1;
 	//static uint8_t IfReceiving=NOTRECEIVING;
-	static uint8_t Command=0;
 	static uint16_t DataLenHigh8=0;
 	static uint16_t DataLenLow8=0;
 	static uint16_t DataLen=0;
-	uint16_t i;
+	uint16_t i = 0;
 	uint8_t CheckSum=0;//校验和
+	uint8_t CheckLenSum=0; //数据长度校验和
+	char* data;
 
   /* Infinite loop */
   for(;;)
   {
 		xReturn = xQueueReceive( QueueUARTToAllocatorHandle, /* 消息队列的句柄 */
-		&Rx_queue, /* 发送的消息内容 */
+		&Rx_queue, /* 接收的消息内容 */
 		(Status==WAITHEAD1?portMAX_DELAY:250)); 
 		if (pdTRUE== xReturn){
-		//printf("：0x%x\r\n",Rx_queue);
+			//printf("：0x%x\r\n",Rx_queue);
 		}
 		else {
 			printf("timeout!0x%lx LENGTH=%d\r\n",xReturn,i);
+			if(Status == READDATA || Status == SUMCHECK) {vPortFree(data);}
 			Status=WAITHEAD1;//回到初始状态
 		}
 		switch(Status)//接收状态机
 		{
-			case WAITHEAD1: if(Rx_queue==HEAD1){Status=WAITHEAD2;} else Status=WAITHEAD1;break;
-			case WAITHEAD2: if(Rx_queue==HEAD2)Status=WAITHEAD3;else Status=WAITHEAD1;break;
-			case WAITHEAD3: if(Rx_queue==HEAD3){Status=GETCOMMAND;/*	printf("catch a frame!\r\n");*/}else Status=WAITHEAD1;break;
-			case GETCOMMAND: 	 
-				Command=Rx_queue;
-				Status=GETLEN1;
+			case WAITHEAD1: if(Rx_queue==HEAD1){Status=WAITHEAD2;} else Status=WAITHEAD1; break;
+			case WAITHEAD2: if(Rx_queue==HEAD2)Status=WAITHEAD3; else Status=WAITHEAD1; break;
+			case WAITHEAD3: if(Rx_queue==HEAD3){CheckLenSum = 0; Status=GETLEN1; /*	printf("catch a frame!\r\n");*/}else Status=WAITHEAD1; break;
+			case GETLEN1: DataLenHigh8=Rx_queue; CheckLenSum+=DataLenHigh8; Status=GETLEN2; break;
+			case GETLEN2: DataLenLow8=Rx_queue; CheckLenSum+=DataLenLow8; DataLen=(DataLenHigh8<<8)+DataLenLow8; Status=LENCHECK; break;
+			case LENCHECK: 
+				if(Rx_queue == CheckLenSum){//长度校验成功
+					i=0; CheckSum=0; //初始化接收data所需数据
+					data = pvPortMalloc(sizeof(char) * (DataLen+2));
+					data[0] = DataLenHigh8; data[1] = DataLenLow8;
+					Status = READDATA;
+				}
+				else{//长度校验失败，回到初始状态
+					printf("checklen wrong!\r\n");
+					Status=WAITHEAD1;
+				}
 				break;
-			case GETLEN1: DataLenHigh8=Rx_queue;Status=GETLEN2;break;
-			case GETLEN2: 
-				DataLenLow8=Rx_queue;
-				DataLen=(DataLenHigh8<<8)+DataLenLow8; 
 				//printf("length=%d\r\n",DataLen);
-				if(Command==TASK_SCREEN){Status=READIMAGE;/*printf("Taskscreen\r\n");*/}
-				else Status=READDATA;
-				i=0;
-				CheckSum=0;
-				break;
+				//if(Command==TASK_SCREEN){Status=READIMAGE;/*printf("Taskscreen\r\n");*/}
+				//else Status=READDATA;
+				//i=0;
+				//CheckSum=0;
+				//break;
+
+			//case GETCOMMAND: 	 
+			//	Command=Rx_queue;
+			//	Status=GETLEN1;
+			//	break;
 			case READDATA: 
-				DataBuffer[i]=Rx_queue;
+				data[i+2]=Rx_queue;
 				CheckSum+=Rx_queue;
 				i++;
-				if(i==DataLen){DataBuffer[i]=0;Status=SUMCHECK;}
-				break;
+				if(i==DataLen){/*data[i+2]=0;*/Status=SUMCHECK;}
+				break; 
 			
-			case READIMAGE: 
-				if(i<2888)BlackImage[i]=Rx_queue;
-				else YellowImage[i-2888]=Rx_queue;
-				CheckSum+=Rx_queue;
-				i++;
-				if(i==DataLen)Status=SUMCHECK;
-				break;
+			//case READIMAGE: 
+			//	if(i<2888)BlackImage[i]=Rx_queue;
+			//	else YellowImage[i-2888]=Rx_queue;
+			//	CheckSum+=Rx_queue;
+			//	i++;
+			//	if(i==DataLen)Status=SUMCHECK;
+			//	break;
 				
 			case SUMCHECK: 
 				//printf("CheckSum=%d",CheckSum);
-				if(Rx_queue==CheckSum)
-				{	
+				if(Rx_queue==CheckSum){	
+					Debug("recieve a frame\r\n");
+					xQueueSend(QueueDecoderToProcessorHandle, &data, 10);
+					data = NULL;
 					//printf("receive a complete frame\r\n");
 					//分配接收到的数据给子任务
-					switch(Command)
+					/*switch(Command)
 					{
 						case TASK_SCREEN:
 							xReturn = xSemaphoreGive(ScreenSemaphoreHandle );//给出二值信号量
@@ -663,19 +699,24 @@ void TaskAllocator(void *argument)
 							
 						case TASK_CALCULATION:
 							xReturn = xSemaphoreGive(CalcSemaphoreHandle );//给出二值信号量
-							if ( xReturn == pdTRUE ) 
-								printf("TaskCalc:\r\n");
+							if ( xReturn == pdTRUE ) {
+								char* s = pvPortMalloc(sizeof(char)*100);
+								sprintf(s, "TaskCalc:\r\n");
+								xQueueSend(QueueToUARTHandle , &s, 100);
+							}
 							else
 							printf("TaskCalc Block!\r\n");
 							break;
 							
 						default: Status=WAITHEAD1;break;
-					}	
+					}	*/
 					Status=WAITHEAD1;
 				}
 				else
 				{
-					switch(Command)
+					vPortFree(data);
+					Debug("checksum wrong!\r\n");
+					/*switch(Command)
 					{
 						case TASK_SCREEN:
 							printf("taskscreen Fail!\r\n");
@@ -684,7 +725,7 @@ void TaskAllocator(void *argument)
 							printf("taskCalc Fail!\r\n");
 							break;
 						default:break;
-					}
+					}*/
 					Status=WAITHEAD1;
 				}
 				break;
@@ -692,7 +733,7 @@ void TaskAllocator(void *argument)
 		}
 			
   }
-  /* USER CODE END 5 */ 
+  /* USER CODE END 5 */
 }
 
 /* USER CODE BEGIN Header_TaskScreenRefresh */
@@ -706,13 +747,15 @@ void TaskScreenRefresh(void *argument)
 {
   /* USER CODE BEGIN TaskScreenRefresh */
 	static BaseType_t xReturn = pdFALSE;
+	struct Image image;
   /* Infinite loop */
   for(;;)
   {
-		xReturn = xSemaphoreTake(ScreenSemaphoreHandle,/* 二值信号量句柄 */
+		xReturn = xQueueReceive(QueueProcessorToScreenHandle,/* 队列句柄 */
+		&image, /*读取元素*/
 		portMAX_DELAY); /* 等待时间 */
 		if (pdTRUE == xReturn)
-		printf("refreshing screen!\r\n");
+		Debug("refreshing screen!\r\n");
 		DEV_Module_Init();
 		EPD_1IN54C_Init();
     //EPD_1IN54C_Clear();
@@ -722,10 +765,12 @@ void TaskScreenRefresh(void *argument)
 		//Paint_SelectImage(YellowImage);
     //Paint_Clear(WHITE);
 		//printf("disp------------------------\r\n");
-		EPD_1IN54C_Display(BlackImage, YellowImage);//刷新屏幕
+		EPD_1IN54C_Display(image.BlackImage, image.YellowImage);//刷新屏幕
 		//printf("close 5V, Module enters 0 power consumption ...\r\n");
-		printf("Screen Refresh Finish!\r\n");
+		Debug("Screen Refresh Finish!\r\n");
     DEV_Module_Exit();
+		vPortFree(image.BlackImage);
+		vPortFree(image.YellowImage);
   }
   /* USER CODE END TaskScreenRefresh */
 }
@@ -765,7 +810,7 @@ void TaskCalculation(void *argument)
 			printf("result = %d\n", val);*///轻量化实现
 			//13K内存实现:
 			sysclock1 =(short)(TIM7 -> CNT);
-			e= expr_create((char*)DataBuffer, strlen((char*)DataBuffer), &vars, NULL);
+			//e= expr_create((char*)DataBuffer, strlen((char*)DataBuffer), &vars, NULL);
 			if (e == NULL) {
 				printf("Syntax error!\r\n");
 				expr_destroy(e,&vars);
@@ -806,7 +851,105 @@ void TaskBlinkLED(void *argument)
   /* USER CODE END TaskBlinkLED */
 }
 
- /**
+/* USER CODE BEGIN Header_UARTTx */
+/**
+* @brief Function implementing the uarttx thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_UARTTx */
+void UARTTx(void *argument)
+{
+  /* USER CODE BEGIN UARTTx */
+  /* Infinite loop */
+  for(;;)
+  {
+		static char* s;
+		BaseType_t xReturn = pdTRUE;
+		xReturn = xQueueReceive( QueueToUARTHandle , /* 消息队列的句柄 */
+			&s, /* 接收的消息内容 */
+			portMAX_DELAY); 
+		if (pdTRUE == xReturn){
+			printf("%s",s);
+			vPortFree(s);
+		}
+  }
+  /* USER CODE END UARTTx */
+}
+
+/* USER CODE BEGIN Header_TaskProcessor */
+/**
+* @brief Function implementing the processor thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_TaskProcessor */
+void TaskProcessor(void *argument)
+{
+  /* USER CODE BEGIN TaskProcessor */
+	uint16_t datalen = 0;
+	uint8_t command = 0;
+	static char* data;
+	
+	static BaseType_t xReturn = pdFALSE;
+	struct expr_var_list vars = {0};
+	struct expr *e; 
+	float result;
+	short sysclock1 = 0;  
+	short sysclock2 = 0;
+	
+	struct Image image;
+  /* Infinite loop */
+  for(;;)
+  {
+		
+		xReturn = xQueueReceive( QueueDecoderToProcessorHandle , /* 消息队列的句柄 */
+			&data, /* 接收的消息内容 */
+			portMAX_DELAY); 
+		Debug("in\r\n");
+		if (pdTRUE == xReturn){
+			datalen = (data[0]<<8) + data[1] - 1; //除掉指令的数据长
+			command = data[2];
+			Debug("command%d datalen%d\r\n",command,datalen);
+			switch(command){
+				case TASK_CALCULATION:
+					sysclock1 =(short)(TIM7 -> CNT);
+					e= expr_create((char*)&data[3], datalen, &vars, NULL);
+					if (e == NULL) {
+						printf("Syntax error!\r\n");
+						expr_destroy(e,&vars);
+					}
+					else{
+						result = expr_eval(e);
+						expr_destroy(e,&vars);
+						sysclock2 =(short)(TIM7 -> CNT);
+						printf("result= %.5f  time=%uus\r\n", result,(short)(sysclock2-sysclock1));
+					}
+					break;
+				case TASK_SCREEN:
+					image.BlackImage = pvPortMalloc(2888);
+					image.YellowImage = pvPortMalloc(2888);
+					if(image.BlackImage == NULL)Debug("black fail");
+					if(image.YellowImage == NULL)Debug("yellow fail");
+					for(int i=0;i<2888;i++){//拷贝图片
+						image.BlackImage[i] = data[i+3];
+						image.YellowImage[i] = data[i+3+2888];
+					}
+					xReturn = xQueueSend(QueueProcessorToScreenHandle, &image, 10);
+					if (xReturn == pdFALSE){
+						vPortFree(image.BlackImage);
+						vPortFree(image.YellowImage);
+					}
+					break;
+				default:break;
+			}
+			vPortFree(data);
+		}
+	}
+  /* USER CODE END TaskProcessor */
+}
+
+/**
   * @brief  Period elapsed callback in non blocking mode
   * @note   This function is called  when TIM16 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
@@ -849,7 +992,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */

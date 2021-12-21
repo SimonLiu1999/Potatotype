@@ -4,6 +4,7 @@ import serial.tools.list_ports
 from PIL import Image
 import numpy as np
 import time
+from Constant import CommandEnum
 
 img=Image.open("tsinghualogo.jpg")
 img = img.resize((152,152))
@@ -42,10 +43,30 @@ def calc(str):
     ser.write(a)
     return
 
-def RefreshScreen(ser,Black,Yellow):
-    a=b'\x11\x22\x33\x01\x16\x90'
+def calc_new(str):
+    a=b'\x11\x22\x33' #帧头
     a=bytearray(a)
+    datalen = len(str) + 1
+    a.append(datalen//256) #高8位
+    a.append(datalen%256)  #低8位
+    a.append((datalen//256 + datalen%256)%256) #datalen校验和 
     sum=0
+    a.append(CommandEnum.TASK_CALCULATION)
+    sum+=CommandEnum.TASK_CALCULATION
+    for i in str:
+        a.extend(bytes(i, encoding="utf8"))
+        sum+=ord(i)
+    a.append(sum%256)
+    ser.write(a)
+    return
+
+def RefreshScreen(ser,Black,Yellow):
+    a=b'\x11\x22\x33\x16\x91'
+    a=bytearray(a)
+    a.append((0x16+0x91)%256)
+    sum=0
+    a.append(CommandEnum.TASK_SCREEN)
+    sum+=CommandEnum.TASK_SCREEN
     for i in range(0,2888):
         a.append(Black[i])
         sum+=Black[i]
@@ -67,7 +88,7 @@ def ReadData(ser):
     # 循环接收数据，此为死循环，可用线程实现
     while BOOL:
         if ser.in_waiting:
-            STRGLO = ser.read(ser.in_waiting).decode("utf-8")
+            STRGLO = ser.read(ser.in_waiting).decode(encoding="utf-8",errors = "replace")
             print(STRGLO,end="")
 
 try:
@@ -83,7 +104,7 @@ try:
   # 写数据
   #print("写总字节数:",result)
 
-  #ser.close()#关闭串口
+  #ser.close()#关闭串口9912
 
 except Exception as e:
     print("---异常---：",e)
@@ -91,6 +112,6 @@ except Exception as e:
 
 #time.sleep(10)
 calc("(1/7+2/7+3/7+1/7+2/7+3/7+(1/7+(2/7+3/7+(1/7+2/7+3/7+1/7))+2/7+3/7)+1/7+(2/7+(3/7)*5+3))**2")
-calc("1/7")
+calc_new("1/7")
 #time.sleep(10)
 RefreshScreen(ser,Black,Yellow)

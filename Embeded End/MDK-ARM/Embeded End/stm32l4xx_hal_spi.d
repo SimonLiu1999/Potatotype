@@ -16,12 +16,11 @@ embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
 embeded end\stm32l4xx_hal_spi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h
-embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h
-embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma_ex.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h
+embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h
 embeded end\stm32l4xx_hal_spi.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h
