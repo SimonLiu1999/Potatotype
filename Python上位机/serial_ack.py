@@ -23,7 +23,7 @@ class Serial_Ack():
         try:
             self.ser=serial.Serial(self.portx, self.bps, timeout=self.timex) # 打开串口，并得到串口对象
         except Exception as e:
-            print("---打开串口失败---：",e)
+            print("---打开串口失败---:",e)
             self.ser.close()#关闭串口
             sys.exit()
 
