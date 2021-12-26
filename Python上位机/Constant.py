@@ -19,7 +19,7 @@ class frame_kind(IntEnum):
 
 class Status(IntEnum):
 	WAITHEAD1=0
-	WAITHEAD2=2
+	WAITHEAD2=1
 	WAITHEAD3=2
 	GETLEN1=3
 	GETLEN2=4
@@ -27,7 +27,7 @@ class Status(IntEnum):
 	READDATA=6
 	SUMCHECK=7
 
-class Head(Enum):
+class Head():
     HEAD1 = 0x11
     HEAD2 = 0x22
     HEAD3 = 0x33

@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32L431xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;     ../Drivers/STM32L4xx_HAL_Driver/Inc;     ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;     ../Drivers/CMSIS/Device/ST/STM32L4xx/Include;     ../Drivers/CMSIS/Include;     ..\EInkLib;     ..\EInkLib\Config;     ..\EInkLib\e-Paper;     ..\EInkLib\GUI;     ..\User\SLMExpression;     ..\EInkLib\Fonts;     ..\User\TaskHandle</IncludePath>
+              <IncludePath>../Inc;      ../Drivers/STM32L4xx_HAL_Driver/Inc;      ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;      ../Middlewares/Third_Party/FreeRTOS/Source/include;      ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;      ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;      ../Drivers/CMSIS/Device/ST/STM32L4xx/Include;      ../Drivers/CMSIS/Include;      ..\EInkLib;      ..\EInkLib\Config;      ..\EInkLib\e-Paper;      ..\EInkLib\GUI;      ..\User\SLMExpression;      ..\EInkLib\Fonts;      ..\User\TaskHandle</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

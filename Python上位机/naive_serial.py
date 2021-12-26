@@ -38,14 +38,16 @@ class Naive_serial():
         thread = threading.Thread(target=self.__UartRx, args=()) #打开接收进程
         thread.setDaemon(True)
         thread.start()
+        '''
         while True:
             data = self.queue_from_uart.get(block=True)
             datalen =  (data[0]<<8)+data[1]-1 # 除掉指令位长度
             cmd =data[2]
             data = data[3:]
             if cmd == CommandEnum.PRINT:
-                print(data.decode(encoding="utf-8",errors = "replace"))
-                
+                print(data_decoder.decode(encoding="utf-8",errors = "replace"))
+        '''
+
     
 
     def __UartRx(self):
@@ -62,7 +64,7 @@ class Naive_serial():
                     print("接收数据超时!")
                     state = Status.WAITHEAD1
                 r_bytes = self.ser.read(self.ser.in_waiting)#.decode(encoding="utf-8",errors = "replace")
-                print(bytes,end="")
+                #print(r_bytes)
                 for r_byte in r_bytes:
                     state = self.__state_machine_decoder(state, r_byte)
                 
@@ -73,13 +75,22 @@ class Naive_serial():
             self.ser.write(packet)
 
     def __state_machine_decoder(self,state,r_byte):
-        check_len_sum = 0
-        datalen_high8 = 0
-        datalen_low8 = 0
-        datalen = 0
-        i = 0
-        checksum = 0
-        data = None
+        global check_len_sum_decoder
+        global datalen_high8_decoder
+        global datalen_low8_decoder
+        global datalen_decoder
+        global i_decoder
+        global checksum_decoder
+        global data_decoder
+
+        if state == Status.WAITHEAD1: # init
+            check_len_sum_decoder=0
+            datalen_high8_decoder=0
+            datalen_low8_decoder=0
+            datalen_decoder=0
+            i_decoder=0
+            checksum_decoder=0
+            data_decoder = None
         
         if state == Status.WAITHEAD1:
             if r_byte == Head.HEAD1:
@@ -93,42 +104,47 @@ class Naive_serial():
                 state = Status.WAITHEAD1
         elif state == Status.WAITHEAD3:
             if r_byte == Head.HEAD3:
-                check_len_sum = 0
+                check_len_sum_decoder = 0
                 state = Status.GETLEN1
             else:
                 state = Status.WAITHEAD1
         elif state == Status.GETLEN1:
-            datalen_high8 = r_byte
-            check_len_sum += datalen_high8
+            datalen_high8_decoder = r_byte
+            check_len_sum_decoder += datalen_high8_decoder
             state = Status.GETLEN2
         elif state == Status.GETLEN2:
-            datalen_low8 = r_byte
-            check_len_sum = (check_len_sum + datalen_low8)%256
-            datalen = (datalen_high8<<8) + datalen_low8
+            datalen_low8_decoder = r_byte
+            #print("datalenlow8%d"%datalen_low8_decoder)
+            check_len_sum_decoder = (datalen_high8_decoder + datalen_low8_decoder)%256
+            datalen_decoder = (datalen_high8_decoder<<8) + datalen_low8_decoder
             state = Status.LENCHECK
         elif state == Status.LENCHECK:
-            if r_byte == check_len_sum:
-                i = 0; checksum = 0
-                data = [0 for x in range(0,(datalen+2))]
-                data[0] = datalen_high8
-                data[1] = datalen_low8
+            #print("len%d"%check_len_sum_decoder)
+            if r_byte == check_len_sum_decoder:
+                i_decoder = 0; checksum_decoder = 0
+                data_decoder = bytearray([0 for x in range(0,(datalen_decoder+2))])
+                data_decoder[0] = datalen_high8_decoder
+                data_decoder[1] = datalen_low8_decoder
                 state = Status.READDATA
             else:
                 print("checklen wrong!")
                 state = Status.WAITHEAD1
         elif state == Status.READDATA:
-            data[i+2] = r_byte
-            checksum += r_byte
-            i += 1
-            if(i == datalen):
+            data_decoder[i_decoder+2] = r_byte
+            checksum_decoder += r_byte
+            i_decoder += 1
+            if(i_decoder == datalen_decoder):
                 state = Status.SUMCHECK
         elif state == Status.SUMCHECK:
-            if int(r_byte) == (checksum%256):
+            if int(r_byte) == (checksum_decoder%256):
                 print("接收到一帧")
-                self.queue_from_uart.put(data)
+                self.queue_from_uart.put(data_decoder)
             else:
                 print("checksum wrong!")
             state = Status.WAITHEAD1
         
         return state
-        
+
+if __name__ == '__main__':
+    a = Naive_serial()
+    a.run()

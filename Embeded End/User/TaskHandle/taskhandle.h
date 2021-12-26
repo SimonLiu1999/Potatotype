@@ -29,7 +29,9 @@ enum Status{
 
 enum Command{
 	TASK_SCREEN=1,
-	TASK_CALCULATION=2
+	TASK_CALCULATION=2,
+	ACK=3,
+	PRINT=4
 };
 
 
@@ -40,5 +42,18 @@ enum Command{
 uint8_t* pack(uint8_t* unpacked_data, uint16_t datalen);
 
 extern IWDG_HandleTypeDef hiwdg;
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart3;
+
+extern osMessageQueueId_t queue_from_processorHandle;
+extern osMessageQueueId_t queue_to_processorHandle;
+extern osMessageQueueId_t queue_to_uartHandle;
+extern osMessageQueueId_t queue_from_uartHandle;
+extern osMessageQueueId_t queue_eventHandle;
+extern osMessageQueueId_t QueueProcessorToScreenHandle;
+extern osMessageQueueId_t QueueDecoderToProcessorHandle;
+extern osMessageQueueId_t QueueToUARTHandle;
+extern osMessageQueueId_t QueueUARTToAllocatorHandle;
+extern osSemaphoreId_t CalcSemaphoreHandle;
 
 #endif
