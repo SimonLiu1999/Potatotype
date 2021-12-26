@@ -1,9 +1,9 @@
 Dependencies for Project 'Embeded End', Target 'Embeded End': (DO NOT MODIFY !)
-F (startup_stm32l431xx.s)(0x61AB38AA)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ..\Inc-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "STM32L431xx SETA 1"--list startup_stm32l431xx.lst --xref -o "embeded end\startup_stm32l431xx.o" --depend "embeded end\startup_stm32l431xx.d")
-F (../Src/main.c)(0x61AB52BA)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\main.o" --omf_browse "embeded end\main.crf" --depend "embeded end\main.d")
-I (../Inc/main.h)(0x61AB38A4)
+F (startup_stm32l431xx.s)(0x61C81008)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ..\Inc-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "STM32L431xx SETA 1"--list startup_stm32l431xx.lst --xref -o "embeded end\startup_stm32l431xx.o" --depend "embeded end\startup_stm32l431xx.d")
+F (../Src/main.c)(0x61C813E0)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\main.o" --omf_browse "embeded end\main.crf" --depend "embeded end\main.d")
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -39,7 +39,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -61,13 +61,13 @@ I (C:\Keil_v5\ARM\ARMCC\include\limits.h)(0x599ECD2A)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x599ECD2E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
-I (..\User\TaskHandle\taskhandle.h)(0x61AB54FD)
+I (..\User\TaskHandle\taskhandle.h)(0x61C8143D)
 I (..\EInkLib\Config\Debug.h)(0x5BEFB7E6)
-F (../Src/freertos.c)(0x61AB38A2)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\freertos.o" --omf_browse "embeded end\freertos.crf" --depend "embeded end\freertos.d")
+F (../Src/freertos.c)(0x61C81004)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\freertos.o" --omf_browse "embeded end\freertos.crf" --depend "embeded end\freertos.d")
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -75,9 +75,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x61AA3570)
-I (../Inc/main.h)(0x61AB38A4)
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -109,48 +109,10 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
-F (../Src/stm32l4xx_it.c)(0x61AB38A3)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_it.o" --omf_browse "embeded end\stm32l4xx_it.crf" --depend "embeded end\stm32l4xx_it.d")
-I (../Inc/main.h)(0x61AB38A4)
+F (../Src/stm32l4xx_it.c)(0x61C81004)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_it.o" --omf_browse "embeded end\stm32l4xx_it.crf" --depend "embeded end\stm32l4xx_it.d")
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l431xx.h)(0x61AA3566)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x61AA356D)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61AA356D)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61AA356D)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61AA356D)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61AA356D)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x61AA3566)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61AA356D)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_iwdg.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x61AA356D)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x61AA356E)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x61AA356E)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x61AA356E)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x61AA356E)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
-I (../Inc/stm32l4xx_it.h)(0x61AB38A3)
-F (../Src/stm32l4xx_hal_msp.c)(0x61AB38A3)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_msp.o" --omf_browse "embeded end\stm32l4xx_hal_msp.crf" --depend "embeded end\stm32l4xx_hal_msp.d")
-I (../Inc/main.h)(0x61AB38A4)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -184,9 +146,47 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
-F (../Src/stm32l4xx_hal_timebase_tim.c)(0x61AB38A4)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_timebase_tim.o" --omf_browse "embeded end\stm32l4xx_hal_timebase_tim.crf" --depend "embeded end\stm32l4xx_hal_timebase_tim.d")
+I (../Inc/stm32l4xx_it.h)(0x61C81005)
+F (../Src/stm32l4xx_hal_msp.c)(0x61C81005)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_msp.o" --omf_browse "embeded end\stm32l4xx_hal_msp.crf" --depend "embeded end\stm32l4xx_hal_msp.d")
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l431xx.h)(0x61AA3566)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x61AA356D)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61AA356D)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61AA356D)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61AA356D)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61AA356D)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x61AA3566)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61AA356D)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_iwdg.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x61AA356D)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x61AA356E)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x61AA356E)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x61AA356E)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x61AA356E)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
+F (../Src/stm32l4xx_hal_timebase_tim.c)(0x61C81005)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_timebase_tim.o" --omf_browse "embeded end\stm32l4xx_hal_timebase_tim.crf" --depend "embeded end\stm32l4xx_hal_timebase_tim.d")
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -222,7 +222,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal.o" --omf_browse "embeded end\stm32l4xx_hal.crf" --depend "embeded end\stm32l4xx_hal.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -258,7 +258,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_i2c.o" --omf_browse "embeded end\stm32l4xx_hal_i2c.crf" --depend "embeded end\stm32l4xx_hal_i2c.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -294,7 +294,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_i2c_ex.o" --omf_browse "embeded end\stm32l4xx_hal_i2c_ex.crf" --depend "embeded end\stm32l4xx_hal_i2c_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -330,7 +330,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_rcc.o" --omf_browse "embeded end\stm32l4xx_hal_rcc.crf" --depend "embeded end\stm32l4xx_hal_rcc.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -366,7 +366,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_rcc_ex.o" --omf_browse "embeded end\stm32l4xx_hal_rcc_ex.crf" --depend "embeded end\stm32l4xx_hal_rcc_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -402,7 +402,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_flash.o" --omf_browse "embeded end\stm32l4xx_hal_flash.crf" --depend "embeded end\stm32l4xx_hal_flash.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -438,7 +438,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_flash_ex.o" --omf_browse "embeded end\stm32l4xx_hal_flash_ex.crf" --depend "embeded end\stm32l4xx_hal_flash_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -474,7 +474,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_flash_ramfunc.o" --omf_browse "embeded end\stm32l4xx_hal_flash_ramfunc.crf" --depend "embeded end\stm32l4xx_hal_flash_ramfunc.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -510,7 +510,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_gpio.o" --omf_browse "embeded end\stm32l4xx_hal_gpio.crf" --depend "embeded end\stm32l4xx_hal_gpio.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -546,7 +546,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_dma.o" --omf_browse "embeded end\stm32l4xx_hal_dma.crf" --depend "embeded end\stm32l4xx_hal_dma.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -582,7 +582,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_dma_ex.o" --omf_browse "embeded end\stm32l4xx_hal_dma_ex.crf" --depend "embeded end\stm32l4xx_hal_dma_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -618,7 +618,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_pwr.o" --omf_browse "embeded end\stm32l4xx_hal_pwr.crf" --depend "embeded end\stm32l4xx_hal_pwr.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -654,7 +654,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_pwr_ex.o" --omf_browse "embeded end\stm32l4xx_hal_pwr_ex.crf" --depend "embeded end\stm32l4xx_hal_pwr_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -690,7 +690,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_cortex.o" --omf_browse "embeded end\stm32l4xx_hal_cortex.crf" --depend "embeded end\stm32l4xx_hal_cortex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -726,7 +726,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_exti.o" --omf_browse "embeded end\stm32l4xx_hal_exti.crf" --depend "embeded end\stm32l4xx_hal_exti.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -762,7 +762,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_iwdg.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_iwdg.o" --omf_browse "embeded end\stm32l4xx_hal_iwdg.crf" --depend "embeded end\stm32l4xx_hal_iwdg.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -798,7 +798,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_spi.o" --omf_browse "embeded end\stm32l4xx_hal_spi.crf" --depend "embeded end\stm32l4xx_hal_spi.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -834,7 +834,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_spi_ex.o" --omf_browse "embeded end\stm32l4xx_hal_spi_ex.crf" --depend "embeded end\stm32l4xx_hal_spi_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -870,7 +870,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_tim.o" --omf_browse "embeded end\stm32l4xx_hal_tim.crf" --depend "embeded end\stm32l4xx_hal_tim.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -906,7 +906,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_tim_ex.o" --omf_browse "embeded end\stm32l4xx_hal_tim_ex.crf" --depend "embeded end\stm32l4xx_hal_tim_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -942,7 +942,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_uart.o" --omf_browse "embeded end\stm32l4xx_hal_uart.crf" --depend "embeded end\stm32l4xx_hal_uart.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -978,7 +978,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c)(0x61AA356E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\stm32l4xx_hal_uart_ex.o" --omf_browse "embeded end\stm32l4xx_hal_uart_ex.crf" --depend "embeded end\stm32l4xx_hal_uart_ex.d")
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -1023,7 +1023,7 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61AA356D)
 I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x61AA3566)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61AA356D)
@@ -1052,7 +1052,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x61AA3570)(--c99 -c -
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1066,7 +1066,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1081,7 +1081,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1094,7 +1094,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1108,7 +1108,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1123,7 +1123,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1138,7 +1138,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1156,7 +1156,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x61AA356D)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x61AA356D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1177,7 +1177,7 @@ I (../Drivers/CMSIS/Include/cmsis_version.h)(0x61AA356D)
 I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x61AA3566)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x61AA356D)
@@ -1206,7 +1206,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1218,7 +1218,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c)(0x6
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x599ECD2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1228,9 +1228,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x61AA3570)
 F (..\EInkLib\Config\DEV_Config.c)(0x6063DCC5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\dev_config.o" --omf_browse "embeded end\dev_config.crf" --depend "embeded end\dev_config.d")
 I (..\EInkLib\Config\DEV_Config.h)(0x61AB26A3)
-I (../Inc/main.h)(0x61AB38A4)
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -1267,7 +1267,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1279,9 +1279,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x61AA3
 F (..\EInkLib\GUI\GUI_Paint.c)(0x6063DDDF)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\gui_paint.o" --omf_browse "embeded end\gui_paint.crf" --depend "embeded end\gui_paint.d")
 I (..\EInkLib\GUI\GUI_Paint.h)(0x607A6E9C)
 I (..\EInkLib\Config\DEV_Config.h)(0x61AB26A3)
-I (../Inc/main.h)(0x61AB38A4)
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -1318,7 +1318,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1335,9 +1335,9 @@ I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x599ECD2E)
 F (..\EInkLib\e-Paper\EPD_1in54c.c)(0x6079B20F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\epd_1in54c.o" --omf_browse "embeded end\epd_1in54c.crf" --depend "embeded end\epd_1in54c.d")
 I (..\EInkLib\e-Paper\EPD_1in54c.h)(0x5D01E7B5)
 I (..\EInkLib\Config\DEV_Config.h)(0x61AB26A3)
-I (../Inc/main.h)(0x61AB38A4)
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -1374,7 +1374,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)
@@ -1405,11 +1405,11 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
 F (..\EInkLib\Fonts\font24CN.c)(0x5A9E4AFB)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\font24cn.o" --omf_browse "embeded end\font24cn.crf" --depend "embeded end\font24cn.d")
 I (..\EInkLib\Fonts\fonts.h)(0x5BD6A308)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
-F (..\User\TaskHandle\taskhandle.c)(0x61AB54FD)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\taskhandle.o" --omf_browse "embeded end\taskhandle.crf" --depend "embeded end\taskhandle.d")
-I (..\User\TaskHandle\taskhandle.h)(0x61AB54FD)
-I (../Inc/main.h)(0x61AB38A4)
+F (..\User\TaskHandle\taskhandle.c)(0x61C823BE)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ..\EInkLib -I ..\EInkLib\Config -I ..\EInkLib\e-Paper -I ..\EInkLib\GUI -I ..\User\SLMExpression -I ..\EInkLib\Fonts -I ..\User\TaskHandle-I.\RTE\_Embeded_End-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L431xx -DUSE_HAL_DRIVER -DSTM32L431xx-o "embeded end\taskhandle.o" --omf_browse "embeded end\taskhandle.crf" --depend "embeded end\taskhandle.d")
+I (..\User\TaskHandle\taskhandle.h)(0x61C8143D)
+I (../Inc/main.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x61AA356D)
-I (../Inc/stm32l4xx_hal_conf.h)(0x61AB38A4)
+I (../Inc/stm32l4xx_hal_conf.h)(0x61C81005)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x61AA356D)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x61AA356D)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61AA3566)
@@ -1445,7 +1445,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x61AA356E)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x61AA356E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x61AA3570)
-I (../Inc/FreeRTOSConfig.h)(0x61AB38A2)
+I (../Inc/FreeRTOSConfig.h)(0x61C81004)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x61AA3570)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x61AA3570)

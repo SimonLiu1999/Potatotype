@@ -71,7 +71,7 @@ class Potatotype(object):
             if btn == ButtonEnum.CONNECT_BUTTON:
                 # 使用socket连接
                 addr = self.__connect_interface.text
-                addr ='183.172.175.161'
+                #addr ='183.172.175.161'
                 try:
                     self.__socket.connect((addr,12345))
                     self.__interface = "choose" # 连接成功后进入选择界面

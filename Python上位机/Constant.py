@@ -1,9 +1,11 @@
 from enum import IntEnum
+from enum import Enum
 
 class CommandEnum(IntEnum):
     TASK_SCREEN = 1
     TASK_CALCULATION = 2
     ACK = 3
+    PRINT = 4
 
 class EventEnum(IntEnum):
     network_layer_ready = 1
@@ -16,11 +18,16 @@ class frame_kind(IntEnum):
     ack = 1
 
 class Status(IntEnum):
-	WAITHEAD1=0,
-	WAITHEAD2=1,
-	WAITHEAD3=2,
-	GETLEN1=3,
-	GETLEN2=4,
-	LENCHECK=5,
-	READDATA=6,
-	SUMCHECK=7,
+	WAITHEAD1=0
+	WAITHEAD2=2
+	WAITHEAD3=2
+	GETLEN1=3
+	GETLEN2=4
+	LENCHECK=5
+	READDATA=6
+	SUMCHECK=7
+
+class Head(Enum):
+    HEAD1 = 0x11
+    HEAD2 = 0x22
+    HEAD3 = 0x33

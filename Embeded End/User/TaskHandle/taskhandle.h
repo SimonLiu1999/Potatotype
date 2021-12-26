@@ -39,4 +39,6 @@ enum Command{
 
 uint8_t* pack(uint8_t* unpacked_data, uint16_t datalen);
 
+extern IWDG_HandleTypeDef hiwdg;
+
 #endif

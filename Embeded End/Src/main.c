@@ -85,7 +85,7 @@ const osThreadAttr_t ScreenRefresh_attributes = {
 osThreadId_t CalculationHandle;
 const osThreadAttr_t Calculation_attributes = {
   .name = "Calculation",
-  .stack_size = 256 * 4,
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for BlinkLED */
@@ -109,6 +109,13 @@ const osThreadAttr_t processor_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for uart_control */
+osThreadId_t uart_controlHandle;
+const osThreadAttr_t uart_control_attributes = {
+  .name = "uart_control",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for QueueUARTToAllocator */
 osMessageQueueId_t QueueUARTToAllocatorHandle;
 const osMessageQueueAttr_t QueueUARTToAllocator_attributes = {
@@ -128,6 +135,31 @@ const osMessageQueueAttr_t QueueDecoderToProcessor_attributes = {
 osMessageQueueId_t QueueProcessorToScreenHandle;
 const osMessageQueueAttr_t QueueProcessorToScreen_attributes = {
   .name = "QueueProcessorToScreen"
+};
+/* Definitions for queue_event */
+osMessageQueueId_t queue_eventHandle;
+const osMessageQueueAttr_t queue_event_attributes = {
+  .name = "queue_event"
+};
+/* Definitions for queue_from_uart */
+osMessageQueueId_t queue_from_uartHandle;
+const osMessageQueueAttr_t queue_from_uart_attributes = {
+  .name = "queue_from_uart"
+};
+/* Definitions for queue_to_uart */
+osMessageQueueId_t queue_to_uartHandle;
+const osMessageQueueAttr_t queue_to_uart_attributes = {
+  .name = "queue_to_uart"
+};
+/* Definitions for queue_to_processor */
+osMessageQueueId_t queue_to_processorHandle;
+const osMessageQueueAttr_t queue_to_processor_attributes = {
+  .name = "queue_to_processor"
+};
+/* Definitions for queue_from_processor */
+osMessageQueueId_t queue_from_processorHandle;
+const osMessageQueueAttr_t queue_from_processor_attributes = {
+  .name = "queue_from_processor"
 };
 /* Definitions for CalcSemaphore */
 osSemaphoreId_t CalcSemaphoreHandle;
@@ -166,9 +198,10 @@ static void MX_TIM7_Init(void);
 void TaskUARTDecoder(void *argument);
 void TaskScreenRefresh(void *argument);
 void TaskCalculation(void *argument);
-void TaskBlinkLED(void *argument);
+extern void TaskBlinkLED(void *argument);
 void UARTTx(void *argument);
 void TaskProcessor(void *argument);
+extern void TaskUARTControl(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -252,6 +285,21 @@ int main(void)
   /* creation of QueueProcessorToScreen */
   QueueProcessorToScreenHandle = osMessageQueueNew (2, sizeof(struct Image), &QueueProcessorToScreen_attributes);
 
+  /* creation of queue_event */
+  queue_eventHandle = osMessageQueueNew (4, sizeof(uint8_t), &queue_event_attributes);
+
+  /* creation of queue_from_uart */
+  queue_from_uartHandle = osMessageQueueNew (3, sizeof(uint32_t), &queue_from_uart_attributes);
+
+  /* creation of queue_to_uart */
+  queue_to_uartHandle = osMessageQueueNew (3, sizeof(uint32_t), &queue_to_uart_attributes);
+
+  /* creation of queue_to_processor */
+  queue_to_processorHandle = osMessageQueueNew (3, sizeof(uint32_t), &queue_to_processor_attributes);
+
+  /* creation of queue_from_processor */
+  queue_from_processorHandle = osMessageQueueNew (3, sizeof(uint32_t), &queue_from_processor_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
@@ -274,6 +322,9 @@ int main(void)
 
   /* creation of processor */
   processorHandle = osThreadNew(TaskProcessor, NULL, &processor_attributes);
+
+  /* creation of uart_control */
+  uart_controlHandle = osThreadNew(TaskUARTControl, NULL, &uart_control_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -591,9 +642,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)//串口回调函数
 		BaseType_t xHigherPriorityTaskWoken=pdFALSE;
 		if(xQueueSendFromISR(QueueUARTToAllocatorHandle , &UpperRx, &xHigherPriorityTaskWoken )!=pdTRUE)printf("**@$$");
 		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-		
-
-
 	}
 }
 /* USER CODE END 4 */
@@ -826,29 +874,6 @@ void TaskCalculation(void *argument)
 
   }
   /* USER CODE END TaskCalculation */
-}
-
-/* USER CODE BEGIN Header_TaskBlinkLED */
-/**
-* @brief Function implementing the BlinkLED thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_TaskBlinkLED */
-void TaskBlinkLED(void *argument)
-{
-  /* USER CODE BEGIN TaskBlinkLED */
-  /* Infinite loop */
-  for(;;)
-  {	
-		HAL_IWDG_Refresh(&hiwdg);
-    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-		osDelay(1);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-		osDelay(1000);
-		 
-  }
-  /* USER CODE END TaskBlinkLED */
 }
 
 /* USER CODE BEGIN Header_UARTTx */

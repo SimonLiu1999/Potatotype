@@ -231,6 +231,7 @@ class Server:
                         'identity': identity,
                         'type': type,
                     }).encode())
+                    
     def __waitForLogin(self, connection, user_id):
         # 尝试接受数据
         # noinspection PyBroadException
@@ -281,7 +282,7 @@ class Server:
         启动服务器
         """
         # 绑定端口
-        self.__socket.bind(('183.172.175.161', 12345))
+        self.__socket.bind(('127.0.0.1', 12345))
         # 启用监听
         self.__socket.listen(10)
         print('[Server] 服务器正在运行......')

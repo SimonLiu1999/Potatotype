@@ -1,5 +1,28 @@
 #include "taskhandle.h"
 
+void TaskUARTControl(void *argument){
+	for(;;){
+		osDelay(1000);
+	}
+}
+
+void TaskBlinkLED(void *argument)
+{
+  /* USER CODE BEGIN TaskBlinkLED */
+  /* Infinite loop */
+  for(;;)
+  {	
+		//printf("led\r\n");
+		HAL_IWDG_Refresh(&hiwdg);
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+		osDelay(1);
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
+		osDelay(1000);
+		 
+  }
+  /* USER CODE END TaskBlinkLED */
+}
+
 uint8_t* pack(uint8_t* unpacked_data, uint16_t datalen){
 	uint8_t* packed_data = pvPortMalloc(datalen + 7);
 	uint8_t checksum = 0;
