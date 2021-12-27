@@ -243,7 +243,7 @@ class ChatInterface(AbstractInterface):
                 self.__add_line('[' + str(obj['sender_nickname']) + '(' + str(obj['sender_id']) + ')' + ']'+ obj['message'])
             except Exception as ex:
                 print(ex)
-                self.__add_line('[Client] 无法从服务器获取数据2')
+                print('[Client] 无法从服务器获取数据2')
 
     def __send_message_thread(self, message):
         """
@@ -286,7 +286,7 @@ class ChatInterface(AbstractInterface):
                  self.__add_line('[Client] 无法登录到聊天室')
         except Exception as ex:
             print(ex)
-            self.__add_line('[Client] 无法从服务器获取数据1')
+            print('[Client] 无法从服务器获取数据1')
 
     def do_send(self):
         """

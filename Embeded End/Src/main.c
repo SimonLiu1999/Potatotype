@@ -92,7 +92,7 @@ const osThreadAttr_t Calculation_attributes = {
 osThreadId_t BlinkLEDHandle;
 const osThreadAttr_t BlinkLED_attributes = {
   .name = "BlinkLED",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityRealtime,
 };
 /* Definitions for uarttx */

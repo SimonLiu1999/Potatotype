@@ -1,5 +1,9 @@
 from Constant import Head 
 
-a=b'\x11"3\x00\x08\x08\x04send\r\n\x00\xc5'
-for b in a:
-    print(Head.HEAD1)
+a = b'\x00\x00\x00'
+a = bytearray(a)
+str = "fuck"
+str_bytes = str.encode(encoding="utf8")
+print(str_bytes)
+a.extend(str_bytes)
+print(a)

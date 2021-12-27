@@ -144,25 +144,27 @@ parameter:
 ******************************************************************************/
 void EPD_1IN54C_Init(void)
 {
+		printf("1");
     EPD_1IN54C_Reset();
-
+		printf("2");
     EPD_1IN54C_SendCommand(0x06); //boost soft start
+	printf("3");
     EPD_1IN54C_SendData(0x17);
     EPD_1IN54C_SendData(0x17);
     EPD_1IN54C_SendData(0x17);
     EPD_1IN54C_SendCommand(0x04);
-
+printf("4");
     EPD_1IN54C_ReadBusy();
-
+printf("5");
     EPD_1IN54C_SendCommand(0x00); //panel setting
     EPD_1IN54C_SendData(0x0f); //LUT from OTP£¬160x296
     EPD_1IN54C_SendData(0x0d); //VCOM to 0V fast
-
+printf("6");
     EPD_1IN54C_SendCommand(0x61); //resolution setting
     EPD_1IN54C_SendData(0x98); //152
     EPD_1IN54C_SendData(0x00); //152
     EPD_1IN54C_SendData(0x98);
-
+printf("7");
     EPD_1IN54C_SendCommand(0X50); //VCOM AND DATA INTERVAL SETTING
     EPD_1IN54C_SendData(0x77); //WBmode:VBDF 17|D7 VBDW 97 VBDB 57		WBRmode:VBDF F7 VBDW 77 VBDB 37  VBDR B7
 }

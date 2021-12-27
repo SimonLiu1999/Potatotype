@@ -1,16 +1,54 @@
 #include "taskhandle.h"
 
 void send_message_test(){
-	uint32_t datalen = strlen("send_message_test\r\n") + 2;
-	//Debug("strlen:%d",datalen);
+	uint32_t datalen = strlen("ok\r\n") + 2;
 	uint8_t* s = pvPortMalloc(sizeof(char)*datalen);
 	s[0] = PRINT;
-	sprintf((char*)&s[1], "send_message_test\r\n");
+	sprintf((char*)&s[1], "ok\r\n");
 	uint8_t* packet = pack(s,datalen);
 	BaseType_t xReturn = pdTRUE;
 	xReturn = xQueueSend( QueueToUARTHandle , /* 消息队列的句柄 */
 														&packet, /* 接收的消息内容 */
-														portMAX_DELAY); 
+														1);
+	if(xReturn== pdFALSE){
+		Debug("send_message_fail!");
+	}
+}
+
+void send_message_to(uint8_t id, uint8_t* message, uint16_t message_len){
+	uint32_t datalen = message_len+4;
+	uint8_t* s = pvPortMalloc(sizeof(char)*datalen);
+	s[0] = BROADCAST;
+	s[1] = id;
+	s[2] = message_len>>8;
+	s[3] = message_len&0x00ff;
+	for(int i=0;i<message_len;i++){
+		s[4+i] = message[i];
+	}
+	vPortFree(message);
+	uint8_t* packet = pack(s,datalen);
+	BaseType_t xReturn = pdTRUE;
+	xReturn = xQueueSend( QueueToUARTHandle , /* 消息队列的句柄 */
+														&packet, /* 接收的消息内容 */
+														1);
+	if(xReturn== pdFALSE){
+		Debug("send_message_fail!");
+	}
+}
+
+void logout(uint8_t id){
+	uint32_t datalen = 2;
+	uint8_t* s = pvPortMalloc(sizeof(char)*datalen);
+	s[0] = LOGOUT;
+	s[1] = id;
+	uint8_t* packet = pack(s,datalen);
+	BaseType_t xReturn = pdTRUE;
+	xReturn = xQueueSend( QueueToUARTHandle , /* 消息队列的句柄 */
+														&packet, /* 接收的消息内容 */
+														1);
+	if(xReturn== pdFALSE){
+		Debug("logout_message_fail!");
+	}
 }
 
 void TaskUARTControl(void *argument){
@@ -25,13 +63,12 @@ void TaskBlinkLED(void *argument)
   /* Infinite loop */
   for(;;)
   {	
-		//Debug("led\r\n");
-		send_message_test();
+		//send_message_test();
 		HAL_IWDG_Refresh(&hiwdg);
     HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
 		osDelay(1);
 		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-		osDelay(1000);
+		osDelay(1500);
 		 
   }
   /* USER CODE END TaskBlinkLED */
@@ -52,6 +89,11 @@ void TaskProcessor(void *argument)
 	short sysclock2 = 0;
 	
 	struct Image image;
+	
+	static uint8_t connect[100] = {0};
+	uint8_t id;
+	uint8_t* message;
+	
   /* Infinite loop */
   for(;;)
   {
@@ -59,13 +101,13 @@ void TaskProcessor(void *argument)
 		xReturn = xQueueReceive( QueueDecoderToProcessorHandle , /* 消息队列的句柄 */
 			&data, /* 接收的消息内容 */
 			portMAX_DELAY); 
-		Debug("in\r\n");
 		if (pdTRUE == xReturn){
 			datalen = (data[0]<<8) + data[1] - 1; //除掉指令的数据长
 			command = data[2];
 			Debug("command%d datalen%d\r\n",command,datalen);
 			switch(command){
 				case TASK_CALCULATION:
+					/*目前内存分配有问题
 					sysclock1 =(short)(TIM7 -> CNT);
 					e= expr_create((char*)&data[3], datalen, &vars, NULL);
 					if (e == NULL) {
@@ -78,12 +120,13 @@ void TaskProcessor(void *argument)
 						sysclock2 =(short)(TIM7 -> CNT);
 						Debug("result= %.5f  time=%uus\r\n", result,(short)(sysclock2-sysclock1));
 					}
+					*/
 					break;
 				case TASK_SCREEN:
 					image.BlackImage = pvPortMalloc(2888);
 					image.YellowImage = pvPortMalloc(2888);
-					if(image.BlackImage == NULL)Debug("black fail");
-					if(image.YellowImage == NULL)Debug("yellow fail");
+					if(image.BlackImage == NULL)Debug("blackpic malloc fail");
+					if(image.YellowImage == NULL)Debug("yellowpic malloc fail");
 					for(int i=0;i<2888;i++){//拷贝图片
 						image.BlackImage[i] = data[i+3];
 						image.YellowImage[i] = data[i+3+2888];
@@ -93,6 +136,47 @@ void TaskProcessor(void *argument)
 						vPortFree(image.BlackImage);
 						vPortFree(image.YellowImage);
 					}
+					break;
+				case LOGIN:
+					id = data[3];
+					connect[id] = 1;
+					Debug("user%d joined the chat room\r\n",id);
+					for(int i=0;i<100;i++){
+						if(connect[i]==1){
+							message = pvPortMalloc(sizeof(char)*50);
+							sprintf((char*)message, "user%d has joined the room", id);
+							uint16_t message_len = strlen((char*)message);
+							send_message_to(id, message, message_len);
+						}
+					}
+					break;
+				case BROADCAST:
+					id = data[3];
+					uint16_t message_len = (data[4]<<8)+data[5];
+					Debug("user%d broadcast message",id);
+					for(int i=0;i<100;i++){
+						if(id!=i && connect[i]==1){
+							message = pvPortMalloc(sizeof(char)*message_len);
+							for(int j=0;j<message_len;j++){
+								message[j] = data[j+6];
+							}
+							send_message_to(id, message, message_len);
+						}
+					}
+					break;
+				case LOGOUT:
+					id = data[3];
+					Debug("user%d logout the chat room\r\n",id);
+					for(int i=0;i<100;i++){
+						if(connect[i]==1){
+							message = pvPortMalloc(sizeof(char)*50);
+							sprintf((char*)message, "user%d has exited the room", id);
+							uint16_t message_len = strlen((char*)message);
+							send_message_to(id, message, message_len);
+						}
+					}
+					connect[id] = 0;
+					logout(id);
 					break;
 				default:break;
 			}
@@ -108,7 +192,6 @@ void TaskUARTDecoder(void *argument)
 	static BaseType_t xReturn = pdTRUE;
 	static uint8_t Rx_queue;
 	static uint8_t Status=WAITHEAD1;
-	//static uint8_t IfReceiving=NOTRECEIVING;
 	static uint16_t DataLenHigh8=0;
 	static uint16_t DataLenLow8=0;
 	static uint16_t DataLen=0;
@@ -116,7 +199,6 @@ void TaskUARTDecoder(void *argument)
 	uint8_t CheckSum=0;//校验和
 	uint8_t CheckLenSum=0; //数据长度校验和
 	char* data;
-
   /* Infinite loop */
   for(;;)
   {
@@ -245,9 +327,10 @@ void TaskScreenRefresh(void *argument)
 		&image, /*读取元素*/
 		portMAX_DELAY); /* 等待时间 */
 		if (pdTRUE == xReturn)
-		Debug("refreshing screen!\r\n");
+		Debug("start refresh screen!\r\n");
 		DEV_Module_Init();
 		EPD_1IN54C_Init();
+		Debug("screen init finished\r\n");
     //EPD_1IN54C_Clear();
 		//Paint_NewImage(BlackImage, EPD_1IN54C_WIDTH, EPD_1IN54C_HEIGHT, 270, WHITE);
 		//Paint_SelectImage(BlackImage);
@@ -276,10 +359,9 @@ void UARTTx(void *argument)
 		xReturn = xQueueReceive( QueueToUARTHandle , /* 消息队列的句柄 */
 			&s, /* 接收的消息内容 */
 			portMAX_DELAY);
+		Debug("uart_sending\r\n");
 		uint32_t datalen = (s[3]<<8)+s[4] + 7;
-		//Debug("STRLEN:%d\r\n",datalen);
 		if (pdTRUE == xReturn){
-			//Debug("%s",s);
 			HAL_UART_Transmit(&huart1 , (uint8_t *)s, datalen,100);
 			vPortFree(s);
 		}
