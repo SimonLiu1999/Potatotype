@@ -61,7 +61,7 @@ class ConnectInterface(AbstractInterface):
             [WINDOW_WIDTH, WINDOW_HEIGHT])
 
         # 创建首页上标题。
-        self.__title_text = Text("C:\\Windows\\Fonts\\simfang.ttf", TITLE_HEIGHT, '你好',
+        self.__title_text = Text("C:\\Windows\\Fonts\\simfang.ttf", TITLE_HEIGHT, '欢迎使用土豆服务器',
                                  WHITE_COLOR, (TITLE_X, TITLE_Y))
 
         # 创建首页上按钮。         
@@ -163,11 +163,11 @@ class ChatInterface(AbstractInterface):
         self.__isLogin = False
 
         self.__clean_button = Button('清空', BUTTON_COLOR, False,
-                                       (BOARD_WIDTH + 30, 130))
+                                       (BOARD_WIDTH + 30, 430))
         self.__send_button = Button('发送', BUTTON_COLOR, True,
-                                       (BOARD_WIDTH + 30, BUTTON_HEIGHT + 160))
+                                       (BOARD_WIDTH + 30, BUTTON_HEIGHT + 460))
         self.__back_button = Button('返回', BUTTON_COLOR, True,
-                                    (BOARD_WIDTH + 30, 2 * BUTTON_HEIGHT + 190))
+                                    (BOARD_WIDTH + 30, 2 * BUTTON_HEIGHT + 490))
         
         self.type_text = ""
         self.__disp_text = []
@@ -187,7 +187,7 @@ class ChatInterface(AbstractInterface):
         pygame.draw.rect(self.__windows, WHITE_COLOR,
                          self.__textrect)
         # 绘制右侧白色背景。
-        pygame.draw.rect(self.__windows, BLUE_COLOR,
+        pygame.draw.rect(self.__windows, ORANGE_COLOR,
                          (BOARD_WIDTH, 0, INFO_WIDTH, BOARD_HEIGHT))
 
     def __add_line(self,str):

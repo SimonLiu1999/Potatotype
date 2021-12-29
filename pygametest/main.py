@@ -9,6 +9,7 @@ def main():
     """
     pygame.init()
     potatotype = Potatotype()
+
     while True:
         potatotype.run()
 

@@ -14,6 +14,7 @@ PLAYER_TWO_COLOR = (255, 251, 240)  # 玩家 2 棋子颜色。
 BLACK_COLOR = (0, 0, 0)             # 黑色。
 WHITE_COLOR = (255, 255, 255)       # 白色。
 BLUE_COLOR = (0, 0, 255)            # 蓝色。
+ORANGE_COLOR = (255, 155, 0)        # 橘黄色。
 PURPLE_COLOR = (255, 0, 255)        # 紫色。
 LIGHT_YELLOW = (247, 238, 214)      # 亮黄色。
 LIGHT_RED = (213, 90, 107)          # 亮红色。

@@ -27,10 +27,26 @@ Project File Date:  12/27/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Embeded End'
+compiling taskhandle.c...
+..\User\TaskHandle\taskhandle.c(108): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "message_len"  (declared at line 155)
+  			switch(command){
+  			^
+..\User\TaskHandle\taskhandle.c(85): warning:  #177-D: variable "vars"  was declared but never referenced
+  	struct expr_var_list vars = {0};
+..\User\TaskHandle\taskhandle.c(86): warning:  #177-D: variable "e"  was declared but never referenced
+  	struct expr *e; 
+..\User\TaskHandle\taskhandle.c(87): warning:  #177-D: variable "result"  was declared but never referenced
+  	float result;
+..\User\TaskHandle\taskhandle.c(88): warning:  #177-D: variable "sysclock1"  was declared but never referenced
+  	short sysclock1 = 0;  
+..\User\TaskHandle\taskhandle.c(89): warning:  #177-D: variable "sysclock2"  was declared but never referenced
+  	short sysclock2 = 0;
+..\User\TaskHandle\taskhandle.c: 6 warnings, 0 errors
 linking...
 Program Size: Code=27976 RO-data=1580 RW-data=260 ZI-data=40924  
 FromELF: creating hex file...
-"Embeded End\Embeded End.axf" - 0 Error(s), 0 Warning(s).
+"Embeded End\Embeded End.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -53,7 +69,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.1.1
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:22
 </pre>
 </body>
 </html>

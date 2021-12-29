@@ -146,7 +146,7 @@ void TaskProcessor(void *argument)
 							message = pvPortMalloc(sizeof(char)*50);
 							sprintf((char*)message, "user%d has joined the room", id);
 							uint16_t message_len = strlen((char*)message);
-							send_message_to(id, message, message_len);
+							send_message_to(i, message, message_len);
 						}
 					}
 					break;
@@ -160,7 +160,7 @@ void TaskProcessor(void *argument)
 							for(int j=0;j<message_len;j++){
 								message[j] = data[j+6];
 							}
-							send_message_to(id, message, message_len);
+							send_message_to(i, message, message_len);
 						}
 					}
 					break;
@@ -172,7 +172,7 @@ void TaskProcessor(void *argument)
 							message = pvPortMalloc(sizeof(char)*50);
 							sprintf((char*)message, "user%d has exited the room", id);
 							uint16_t message_len = strlen((char*)message);
-							send_message_to(id, message, message_len);
+							send_message_to(i, message, message_len);
 						}
 					}
 					connect[id] = 0;
