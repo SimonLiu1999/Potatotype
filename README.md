@@ -26,3 +26,7 @@ Embedded End是c语言写的跑在土豆服务器上的服务器端程序，烧�
 
 Embedded End is a server-side program written in C and running on the potato server, it is burned in stm32.
 
+
+
+本人代码水平不高，大部分代码都是边学边写，因此存在诸多不规范和已知bug，在寒假期间还会逐步完善。
+
