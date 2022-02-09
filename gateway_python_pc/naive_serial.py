@@ -16,7 +16,7 @@ from queue import Empty, Queue
 
 class Naive_serial():
     def __init__(self):
-        self.portx = "COM7" #端口，GNU / Linux上的/ dev / ttyUSB0 等 或 Windows上的 COM3 等
+        self.portx = "COM26" #端口，GNU / Linux上的/ dev / ttyUSB0 等 或 Windows上的 COM3 等
         self.bps = 115200 #波特率，标准值之一：50,75,110,134,150,200,300,600,1200,1800,2400,4800,9600,19200,38400,57600,115200
         self.timex = 5 #超时设置,None：永远等待操作，0为立即返回请求结果，其他值为等待超时时间(单位为秒）
         self.nbuffered = 0 # 目前buffer中还需要保留的个数，即窗口中未被确认的个数
